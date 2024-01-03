@@ -1,6 +1,16 @@
+import { IsDate, IsString, IsNotEmpty } from 'class-validator';
 export class CreateReservationDto {
-    startDate: Date;
-    endDate: Date;
-    placeId: string;
-    invoiceId: string;
+  @IsDate()
+  startDate: Date;
+
+  @IsDate()
+  endDate: Date;
+
+  @IsString()
+  @IsNotEmpty()
+  placeId: string;
+
+  @IsString()
+  @IsNotEmpty()
+  invoiceId: string;
 }
